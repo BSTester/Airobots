@@ -1,0 +1,23 @@
+version: "2.0"
+services:
+  grid:
+    build: ./SeleniumGrid
+    restart: unless-stopped
+    ports:
+      - "6044:4444"
+    container_name: tfw_selenium_grid
+  webdriver:
+    build: ./WebDriver
+    restart: unless-stopped
+    ports:
+      - "6080:80"
+    links:
+      - grid
+    container_name: tfw_web_driver
+  runtest:
+    build: ./
+    volumes:
+      - ./:/data/
+    links:
+      - grid
+    container_name: runtest

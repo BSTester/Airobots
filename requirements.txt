@@ -1,0 +1,23 @@
+airtest
+airtest_selenium
+pocoui
+opencv-contrib-python
+parameterized 
+selenium
+requests 
+pymysql 
+pymongo 
+pyautogui
+pytest 
+pynput
+# pywin32
+robotframework 
+robotframework-seleniumlibrary
+robotframework-appiumlibrary
+robotframework-requests 
+robotframework-databaselibrary
+robotframework-ftplibrary 
+robotframework-archivelibrary 
+robotframework-difflibrary 
+robotframework-mongodbLibrary 
+pywinio
