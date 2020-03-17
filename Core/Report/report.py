@@ -14,7 +14,7 @@ screen_func = ["find_element_by_xpath", "find_element_by_id", "find_element_by_n
                "open_context_menu", "mouse_up", "mouse_down", "drag_and_drop_by_offset", "mouse_over", "mouse_out", "drag_and_drop", "go_to"]
 
 second_screen_func = ["click", "send_keys"]
-other_func = []
+other_func = ['page_should_contain', 'page_should_not_contain']
 
 def new_trans_screen(self, step, code):
     trans = old_trans_screen(self, step, code)
