@@ -14,7 +14,8 @@ from airtest.report.report import get_parger as report_parser
  
 
 # 测试用例
-from TestCase.hello import CustomCase
+# from TestCase.hello import CustomCase
+from TestCase.android_hello import AndroidCase
 
 
 
@@ -22,7 +23,7 @@ def load_cases():
     suites = list()
     test_loader = TestLoader()
     # 加载用例
-    suites.append(test_loader.loadTestsFromTestCase(CustomCase))
+    suites.append(test_loader.loadTestsFromTestCase(AndroidCase))
 
     # 从用例类列表文件加载用例
     if os.path.isfile('be_run_cases.txt'):
@@ -46,7 +47,7 @@ def reporter():
 
 if __name__ == '__main__':
     ap = runner_parser()
-    ap.set_defaults(log='Results', recording=False, device=None)
+    ap.set_defaults(log='Results', recording=False, device=["Android:///"])
     args = ap.parse_args(sys.argv)
     run_script(args, load_cases())
     reporter()

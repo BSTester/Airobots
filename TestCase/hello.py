@@ -42,7 +42,7 @@ class CustomCase(AirtestCase):
         # 使用RobotFrameWork-SeleniumLibrary方法
         self.wd.go_to('https://www.baidu.com')
         self.wd.maximize_browser_window()
-        self.baidu.search_and_click('软件测试')
+        self.baidu.search_and_click('软件测试', '百度百科')
         self.wd.switch_window('NEW')
         self.wd.page_should_contain('百度百科')
         # 可混合使用selenium原生方法
@@ -51,6 +51,3 @@ class CustomCase(AirtestCase):
         self.wd.switch_window('NEW')
         title = self.wd.get_title()
         assert_equal(title, '新闻中心-腾讯网', '对比页面标题')
-
-
-
