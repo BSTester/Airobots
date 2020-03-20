@@ -21,3 +21,5 @@ robotframework-archivelibrary
 robotframework-difflibrary 
 robotframework-mongodbLibrary 
 pywinio
+httprunner
+locustio
