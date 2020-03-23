@@ -48,12 +48,10 @@ def new_trans_screen(self, step, code):
 
         return screen
     else:
-        if trans.get('src'):
-            trans['src'] = os.path.join(LOGDIR, os.path.split(trans.get('src'))[-1])
-        if trans.get('_filepath'):
-            trans['_filepath'] = os.path.join(LOGDIR, os.path.split(trans.get('_filepath'))[-1])
-        if trans.get('thumbnail'):
-            trans['thumbnail'] = os.path.join(LOGDIR, os.path.split(trans.get('thumbnail'))[-1])
+        for key in ['src', '_filepath', 'thumbnail']:
+            if trans.get(key):
+                trans[key] = os.path.join(LOGDIR, os.path.split(trans.get(key))[-1])
+      
         return trans
 
 def new_translate_desc(self, step, code):
@@ -142,6 +140,15 @@ def new_translate_code(self, step):
         for idx, item in enumerate(trans["args"]):
             if item["key"] == "self":
                 trans["args"].pop(idx)
+        for v in trans["args"]:
+            value = v.get('value')
+            if isinstance(value, dict) and value.get('__class__') == 'Template':
+                for key in ['filename', '_filepath']:
+                    path = value.get(key) and value.get(key).split(os.sep) or []
+                    if 'TestCase' in path: value[key] = os.path.join('..', os.sep.join(path[path.index('TestCase'):]))
+                v['value'] = value
+                path = v.get('image') and v.get('image').split(os.sep) or []
+                if 'TestCase' in path: v['image'] = os.path.join('..', os.sep.join(path[path.index('TestCase'):]))
     return trans
 
 
