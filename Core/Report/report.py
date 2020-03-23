@@ -42,12 +42,18 @@ def new_trans_screen(self, step, code):
                     screen["pos"] = res["pos"]
                 break
 
-        if self.export_dir and src:
+        if src:
             src = os.path.join(LOGDIR, src)
         screen["src"] = src
 
         return screen
     else:
+        if trans.get('src'):
+            trans['src'] = os.path.join(LOGDIR, os.path.split(trans.get('src'))[-1])
+        if trans.get('_filepath'):
+            trans['_filepath'] = os.path.join(LOGDIR, os.path.split(trans.get('_filepath'))[-1])
+        if trans.get('thumbnail'):
+            trans['thumbnail'] = os.path.join(LOGDIR, os.path.split(trans.get('thumbnail'))[-1])
         return trans
 
 def new_translate_desc(self, step, code):

@@ -69,7 +69,7 @@ class AirSelenium(
     WaitingKeywords,
     WindowKeywords):
     
-    def __init__(self, screenshot_root_directory='Results', web_driver=WebChrome, alias=None, device=None, headless=None, executable_path="chromedriver"):
+    def __init__(self, screenshot_root_directory=os.path.join('Results', 'log'), web_driver=WebChrome, alias=None, device=None, headless=None, executable_path="chromedriver"):
         ctx = SeleniumLibrary(screenshot_root_directory=screenshot_root_directory)
         if web_driver and inspect.isclass(web_driver) and web_driver.__name__ == 'WebChrome': 
             chrome_options = webdriver.ChromeOptions()

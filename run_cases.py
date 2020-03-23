@@ -43,7 +43,7 @@ def reporter():
     ap = argparse.ArgumentParser()
     ap = report_parser(ap)
     ap.set_defaults(lang='zh', static_root=os.path.join('..', 'Core', 'Report'), outfile=os.path.join('Results', 'report.html'),
-                    log_root='Results',  plugins=['poco.utils.airtest.report', 'Core.Report.report'])
+                    log_root=os.path.join('Results', 'log'),  plugins=['poco.utils.airtest.report', 'Core.Report.report'])
     args = ap.parse_args(sys.argv)
     report_main(args)
 
@@ -51,7 +51,7 @@ def reporter():
 if __name__ == '__main__':
     ap = runner_parser()
     ap.add_argument("--type", required=False, type=str, choices=('gui', 'api'), help="set test type, gui or api", default='gui')
-    ap.set_defaults(log='Results', recording=False, device=["Android:///"])
+    ap.set_defaults(log=os.path.join('Results', 'log'), recording=False, device=["Android:///"])
     args = ap.parse_args(sys.argv)
     if args.type == 'gui':
         run_script(args, load_cases())
