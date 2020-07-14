@@ -7,7 +7,7 @@ selenium
 requests 
 pymysql 
 pymongo 
-pyautogui
+# pyautogui
 pytest 
 pynput
 # pywin32
@@ -22,4 +22,6 @@ robotframework-difflibrary
 robotframework-mongodbLibrary 
 pywinio
 httprunner
-locustio
+locust
+allure-pytest
+httprunner[allure]

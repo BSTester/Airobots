@@ -11,13 +11,12 @@ from airtest.cli.parser import runner_parser
 from unittest import TestLoader
 from airtest.report.report import main as report_main
 from airtest.report.report import get_parger as report_parser
-from httprunner.api import HttpRunner
-from httprunner import report
+from httprunner.cli import main_run
  
 
 # 测试用例
 from TestCase.hello import CustomCase
-from TestCase.android_hello import AndroidCase
+# from TestCase.android_hello import AndroidCase
 
 
 
@@ -25,8 +24,8 @@ def load_cases():
     suites = list()
     test_loader = TestLoader()
     # 加载用例
-    # suites.append(test_loader.loadTestsFromTestCase(CustomCase))
-    suites.append(test_loader.loadTestsFromTestCase(AndroidCase))
+    suites.append(test_loader.loadTestsFromTestCase(CustomCase))
+    # suites.append(test_loader.loadTestsFromTestCase(AndroidCase))
 
     # 从用例类列表文件加载用例
     if os.path.isfile('be_run_cases.txt'):
@@ -42,8 +41,9 @@ def load_cases():
 def reporter():
     ap = argparse.ArgumentParser()
     ap = report_parser(ap)
+    ap.add_argument("--type", required=False, type=str, choices=('gui', 'api'), help="set test type, gui or api", default='gui')
     ap.set_defaults(lang='zh', static_root=os.path.join('..', 'Core', 'Report'), outfile=os.path.join('Results', 'report.html'),
-                    log_root=os.path.join('Results', 'log'),  plugins=['poco.utils.airtest.report', 'Core.Report.report'])
+                    log_root=os.path.join('logs'),  plugins=['poco.utils.airtest.report', 'Core.Report.report'])
     args = ap.parse_args(sys.argv)
     report_main(args)
 
@@ -51,11 +51,11 @@ def reporter():
 if __name__ == '__main__':
     ap = runner_parser()
     ap.add_argument("--type", required=False, type=str, choices=('gui', 'api'), help="set test type, gui or api", default='gui')
-    ap.set_defaults(log=os.path.join('Results', 'log'), recording=False, device=["Android:///"])
-    args = ap.parse_args(sys.argv)
+    ap.set_defaults(log=os.path.join('logs'), recording=False, device=None) # ["Android:///"]
+    args, extra_args = ap.parse_known_args(sys.argv)
     if args.type == 'gui':
         run_script(args, load_cases())
         reporter()
     else:
-        summary = HttpRunner(failfast=True).run(os.path.join('TestCase', 'APICase'))
-        report.gen_html_report(summary, report_dir="Results", report_file=os.path.join('Results', 'report_api.html'))
+        main_run(extra_args or ['--html={}'.format(os.path.join('Results', 'report_api.html')), 
+                                os.path.join('TestCase', 'APICase')])
