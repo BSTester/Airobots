@@ -1,12 +1,11 @@
 # -*- encoding=utf8 -*-
 
 from airtest.core.api import *
-from Core.runner import AirtestCase
-from Core.Libs import AirSelenium
+from unittest import TestCase
 from airtest.core.settings import Settings as ST
 
 
-class DemoOP(AirtestCase):
+class DemoOP(TestCase):
     """Demo page objects."""
 
     SEARCH_BOX = '//*[@id="kw"]'

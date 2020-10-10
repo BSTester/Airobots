@@ -1,0 +1,1 @@
+[07:11:08][DEBUG]<airtest.core.android.adb> C:\Users\lx\AppData\Roaming\Python\Python38\site-packages\airtest\core\android\static\adb\windows\adb.exe devices

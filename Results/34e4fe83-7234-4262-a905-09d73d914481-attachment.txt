@@ -1,0 +1,1 @@
+[35mDEBUG   [0m airtest.core.android.adb:adb.py:144 C:\Users\lx\AppData\Roaming\Python\Python38\site-packages\airtest\core\android\static\adb\windows\adb.exe devices
