@@ -25,4 +25,11 @@
 
 运行GUI测试，需要安装ChromeDriver，请自行下载安装，或安装node之后执行 `npm install -g chromedriver` 安装
 
-执行测试 `pytest .\TestCase\AndroidCase\ --alluredir=Results`
+执行测试 
+
+```
+pytest ./TestCase/APICase/ --alluredir=Results      # API测试
+pytest ./TestCase/GUICase/ --alluredir=Results      # GUI测试
+pytest ./TestCase/AndroidCase/ --alluredir=Results  # Android测试
+pytest ./TestCase/IOSCase/ --alluredir=Results      # IOS测试
+```
