@@ -21,7 +21,13 @@
         ├─SeleniumGrid
         └─WebDriver
 
-使用前请先执行 `pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple` 安装相关依赖包
+使用前请先安装相关依赖包, 执行
+
+```
+pip install https://github.com/BSTester/postman2case/archive/master.zip
+pip install https://github.com/BSTester/Airtest/archive/master.zip
+pip install airobot -i https://mirrors.aliyun.com/pypi/simple
+```
 
 运行GUI测试，需要安装ChromeDriver，请自行下载安装，或安装node之后执行 `npm install -g chromedriver` 安装
 

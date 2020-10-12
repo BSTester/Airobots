@@ -1,4 +1,3 @@
-appium
 selenium
 requests 
 pymysql 
@@ -14,10 +13,7 @@ pywinio
 httprunner
 httprunner[allure]
 locust
-allure-robotframework
 allure-pytest
 paramiko
 sshtunnel
-https://github.com/BSTester/postman2case/archive/master.zip
-https://github.com/BSTester/Airtest/archive/master.zip
 AirobotLibrary
