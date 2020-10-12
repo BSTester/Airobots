@@ -22,7 +22,7 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
-    name='airobot',
+    name='airobots',
     version='1.0.0',
     author='贝克街的捉虫师',
     author_email='forpeng@foxmail.com',
