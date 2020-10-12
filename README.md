@@ -28,7 +28,7 @@
 执行测试 
 
 ```
-hrun ./TestCase/APICase/ --alluredir=Results      # API测试
+hrun ./TestCase/APICase/ --alluredir=Results        # API测试
 pytest ./TestCase/GUICase/ --alluredir=Results      # GUI测试
 pytest ./TestCase/AndroidCase/ --alluredir=Results  # Android测试
 pytest ./TestCase/IOSCase/ --alluredir=Results      # IOS测试
