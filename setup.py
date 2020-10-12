@@ -29,7 +29,7 @@ setup(
     description='UI Test Automation Framework for Games and Apps on Android/iOS/Windows/Linux/Web',
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
-    url='https://github.com/BSTester/Airobot',
+    url='https://github.com/BSTester/Airobots',
     license='Apache License 2.0',
     keywords=['automation', 'automated-test', 'game', 'android', 'ios', 'windows', 'linux'],
     package_dir={'': 'src'},  # Optional
@@ -37,7 +37,7 @@ setup(
     install_requires=reqs,
     entry_points="""
     [console_scripts]
-    airobot = airobot.__main__:main
+    airobots = airobots.__main__:main
     """,
     classifiers=[
         'Programming Language :: Python :: 2.7',

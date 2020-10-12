@@ -26,7 +26,7 @@
 ```
 pip install https://github.com/BSTester/postman2case/archive/master.zip
 pip install https://github.com/BSTester/Airtest/archive/master.zip
-pip install airobot -i https://mirrors.aliyun.com/pypi/simple
+pip install airobots -i https://mirrors.aliyun.com/pypi/simple
 ```
 
 运行GUI测试，需要安装ChromeDriver，请自行下载安装，或安装node之后执行 `npm install -g chromedriver` 安装
