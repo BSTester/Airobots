@@ -3,7 +3,7 @@ import os
 import sys
 import pytest
 from airobots import __description__, __version__
-from httprunner.cli import main as hrun_main
+from httprunner.cli import main_run
 
 
 def main():
@@ -14,7 +14,7 @@ def main():
         "-v", "--version", dest="version", action="store_true", help="show version"
     )
     parser.add_argument(
-        "-t", "--type", dest="test type", default='api', choices=['api', 'web', 'ios', 'android'], help="auto test type, api, web, ios, android"
+        "-t", "--type", dest="test type", required=True, default='api', choices=['api', 'web', 'ios', 'android'], help="auto test type, api, web, ios, android"
     )
     if len(sys.argv) == 1:
         # httprunner
@@ -25,11 +25,7 @@ def main():
         if sys.argv[1] in ["-v", "--version"]:
             # httprunner -V
             print(f"{__version__}")
-        elif sys.argv[1] in ["-h", "--help"]:
-            # httprunner -h
-            parser.print_help()
-        elif sys.argv[1] in ["-t", "--type"]:
-            # httprunner -h
+        else:
             parser.print_help()
         sys.exit(0)
     elif (
@@ -50,7 +46,7 @@ def main():
         sys.exit(0)
 
     if sys.argv[2] == "api":
-        sys.exit(hrun_main(extra_args))
+        sys.exit(main_run(extra_args))
     elif sys.argv[2] in ['web', 'ios', 'android']:
         sys.exit(pytest.main(extra_args))
 

@@ -23,7 +23,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='airobots',
-    version='1.0.0',
+    version='1.0.1',
     author='贝克街的捉虫师',
     author_email='forpeng@foxmail.com',
     description='UI Test Automation Framework for Games and Apps on Android/iOS/Windows/Linux/Web',
