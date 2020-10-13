@@ -3,7 +3,7 @@ requests
 pymysql 
 pymongo 
 # pyautogui
-pytest 
+pytest<6.0.0
 pytest-selenium
 pynput
 # pywin32
