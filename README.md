@@ -30,3 +30,5 @@ airobots -t web ./Web/Case/Path/ --html=Results/report.html          # Web测试
 airobots -t android ./Android/Case/Path/ --html=Results/report.html  # Android测试
 airobots -t ios ./IOS/Case/Path/ --html=Results/report.html          # IOS测试
 ```
+
+演示项目: https://github.com/BSTester/AirobotsDemo
