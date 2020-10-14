@@ -3,14 +3,7 @@ import sys
 import pathlib
 from setuptools import setup, find_packages
 
-
-def parse_requirements(filename):
-    """ load requirements from a pip requirements file. (replacing from pip.req import parse_requirements)"""
-    lineiter = (line.strip() for line in open(filename))
-    return [line for line in lineiter if line and not line.startswith("#")]
-
-
-reqs = parse_requirements('requirements.txt')
+reqs = ["selenium","requests ","pymysql ","pymongo ","pytest<6.0.0","pytest-selenium","pynput","robotframework ","robotframework-mongodbLibrary ","pywinio","httprunner","httprunner[allure]","locust","allure-pytest","paramiko","sshtunnel","AirobotLibrary"]
 if sys.platform == "win32":
     reqs.append('pywin32')
     reqs.append('pyautogui')
@@ -23,7 +16,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='airobots',
-    version='1.0.4',
+    version='1.0.0-Beta',
     author='贝克街的捉虫师',
     author_email='forpeng@foxmail.com',
     description='UI Test Automation Framework for Games and Apps on Android/iOS/Windows/Linux/Web',
