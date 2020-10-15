@@ -4,6 +4,7 @@ import sys
 import pytest
 from airobots import __description__, __version__
 from httprunner.cli import main_run
+from airtest.core.settings import Settings as ST
 
 
 def main():
@@ -48,6 +49,8 @@ def main():
     if sys.argv[2] == "api":
         sys.exit(main_run(extra_args))
     elif sys.argv[2] in ['web', 'ios', 'android']:
+        ST.LOG_DIR = os.path.join('Results', 'log')
+        if not os.path.exists(ST.LOG_DIR): os.makedirs(ST.LOG_DIR)
         sys.exit(pytest.main(extra_args))
 
 

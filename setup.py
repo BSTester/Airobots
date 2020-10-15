@@ -3,11 +3,13 @@ import sys
 import pathlib
 from setuptools import setup, find_packages
 
-reqs = ["selenium","requests ","pymysql ","pymongo ","pytest<6.0.0","pytest-selenium","pynput","robotframework ","robotframework-mongodbLibrary ","pywinio","httprunner","httprunner[allure]","locust","allure-pytest","paramiko","sshtunnel","AirobotLibrary"]
+reqs = ["selenium", "pocoui","requests","pymysql","pymongo","pytest<6.0.0","pytest-selenium","pynput","pywinio","httprunner","httprunner[allure]","locust","allure-pytest","paramiko","sshtunnel","AirobotLibrary"]
 if sys.platform == "win32":
     reqs.append('pywin32')
     reqs.append('pyautogui')
-
+if sys.version_info < (3,8):
+    reqs.append('airtest')
+    reqs.append('airtest_selenium')
 
 here = pathlib.Path(__file__).parent.resolve()
 
@@ -16,7 +18,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='airobots',
-    version='1.0.0-Beta',
+    version='1.0.4',
     author='贝克街的捉虫师',
     author_email='forpeng@foxmail.com',
     description='UI Test Automation Framework for Games and Apps on Android/iOS/Windows/Linux/Web',
