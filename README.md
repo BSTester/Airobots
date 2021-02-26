@@ -10,6 +10,9 @@
 pip install airobots -i https://mirrors.aliyun.com/pypi/simple
 ```
 
+> windows系统下, 如果安装失败, 可能需要安装C++编译工具: visualcppbuildtools_full.exe, 具体错误请留意控制台报错信息。
+
+
 运行WEB测试，需要安装ChromeDriver，请自行下载安装，或安装node之后执行 `npm install -g chromedriver` 安装
 
 ## 执行测试 
