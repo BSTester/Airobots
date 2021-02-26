@@ -10,12 +10,6 @@
 pip install airobots -i https://mirrors.aliyun.com/pypi/simple
 ```
 
-如果安装失败或Python版本大于3.7, 请先安装这个版本的Airtest
-
-```
-pip install https://github.com/BSTester/Airtest/archive/master.zip          
-```
-
 运行WEB测试，需要安装ChromeDriver，请自行下载安装，或安装node之后执行 `npm install -g chromedriver` 安装
 
 ## 执行测试 
