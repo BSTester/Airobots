@@ -3,7 +3,7 @@ import sys
 import pathlib
 from setuptools import setup, find_packages
 
-reqs = ["selenium", "airtest", "airtest_selenium", "pocoui","requests","pymysql","pymongo","pytest<6.0.0","pytest-selenium","pynput","pywinio","httprunner","httprunner[allure]","locust","allure-pytest","paramiko","sshtunnel","AirobotLibrary"]
+reqs = ["selenium", "airtest", "airtest_selenium", "pocoui","requests","pymysql","pymongo","pytest<6.0.0", "pm2case","pytest-selenium","pynput","pywinio","httprunner","httprunner[allure]","locust","allure-pytest","paramiko","sshtunnel","AirobotLibrary"]
 if sys.platform == "win32":
     reqs.append('pywin32')
     reqs.append('pyautogui')
