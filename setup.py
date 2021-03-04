@@ -4,7 +4,7 @@ import pathlib
 from setuptools import setup, find_packages
 from src.airobots import __version__
 
-reqs = ["selenium", "airtest", "airtest_selenium", "pocoui","requests","pymysql","pymongo","pytest<6.0.0", "pm2case","pytest-selenium","pynput","pywinio","httprunner","httprunner[allure]","locust","allure-pytest","paramiko","sshtunnel","AirobotLibrary"]
+reqs = ["selenium", "airtest", "airtest_selenium", "pocoui","requests","pymysql","pymongo","pytest", "pm2case","pytest-selenium","pynput","pywinio","httprunner","httprunner[allure]","locust","allure-pytest","paramiko","sshtunnel","AirobotLibrary"]
 if sys.platform == "win32":
     reqs.append('pywin32')
     reqs.append('pyautogui')
@@ -50,6 +50,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3 :: Only',
     ],
     project_urls={  # Optional
