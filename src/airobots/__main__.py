@@ -35,7 +35,7 @@ def main():
             parser.print_help()
         sys.exit(0)
     elif (
-        len(sys.argv) in (5, 6) and (sys.argv[1] not in ["-t", "--type", "-b", "--browser", "-r", "--remote-url"] or sys.argv[3] not in ["-t", "--type", "-b", "--browser", "-r", "--remote-url"])
+        len(sys.argv) in (5, 6) and (sys.argv[1] not in ["-t", "--type", "-b", "--browser", "-r", "--remote-url"] and sys.argv[3] not in ["-t", "--type", "-b", "--browser", "-r", "--remote-url"])
     ):
         if sys.argv[1] in ["-v", "--version"]:
             print(f"{__version__}")

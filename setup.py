@@ -2,6 +2,7 @@ import os
 import sys
 import pathlib
 from setuptools import setup, find_packages
+from src.airobots import __version__
 
 reqs = ["selenium", "airtest", "airtest_selenium", "pocoui","requests","pymysql","pymongo","pytest<6.0.0", "pm2case","pytest-selenium","pynput","pywinio","httprunner","httprunner[allure]","locust","allure-pytest","paramiko","sshtunnel","AirobotLibrary"]
 if sys.platform == "win32":
@@ -15,7 +16,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='airobots',
-    version='1.0.9',
+    version=__version__,
     author='贝克街的捉虫师',
     author_email='forpeng@foxmail.com',
     description='UI Test Automation Framework for Games and Apps on Android/iOS/Windows/Linux/Web',
