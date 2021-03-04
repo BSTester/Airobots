@@ -62,7 +62,7 @@ def main():
     elif args_parames.get('test type') in ['web', 'ios', 'android']:
         ST.BROWSER = args_parames.get('test browser', ST.BROWSER)
         ST.REMOTE_URL = args_parames.get('remote url', ST.REMOTE_URL)
-        ST.LOG_DIR = os.path.join('Results', 'log')
+        ST.LOG_DIR = 'logs'
         if not os.path.exists(ST.LOG_DIR): os.makedirs(ST.LOG_DIR)
         sys.exit(pytest.main(extra_args))
     else:
