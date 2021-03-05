@@ -5,7 +5,7 @@ import pathlib
 from setuptools import setup, find_packages
 from src.airobots import __version__
 
-reqs = ["selenium", "airtest", "airtest_selenium", "pocoui","requests","pymysql","pymongo","pytest", "pm2case","pytest-selenium","pynput","pywinio","httprunner","httprunner[allure]","locust", "httprunner[locust]", "httprunner[upload]","allure-pytest", "pytest-repeat","paramiko","sshtunnel","AirobotLibrary"]
+reqs = ["selenium", "airtest", "airtest_selenium", "pocoui","requests","pymysql","pymongo","pytest", "pm2case","pytest-selenium","pynput","pywinio","airhttprunner","airhttprunner[allure]","locust", "airhttprunner[locust]", "airhttprunner[upload]","allure-pytest", "pytest-repeat","paramiko","sshtunnel","AirobotLibrary"]
 if sys.platform == "win32":
     reqs.append('pywin32')
     reqs.append('pyautogui')

@@ -3,7 +3,7 @@ import os
 import sys
 import pytest
 from airobots import __description__, __version__
-from httprunner.cli import main_run
+from airhttprunner.cli import main_run
 from airtest.core.settings import Settings as ST
 
 
