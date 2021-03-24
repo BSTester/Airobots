@@ -45,7 +45,7 @@ def screen_attach():
     screen = try_log_screen()
     filepath = os.path.join(ST.LOG_DIR, screen.get('screen'))
     with open(filepath, 'rb') as fp:
-        allure.attach(fp.read(), '截图', allure.attachment_type.JPG)
+        allure.attach(fp.read(), '截图', allure.attachment_type.PNG)
 
 @allure.step
 def shell(cmd):
