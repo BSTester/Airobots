@@ -22,19 +22,19 @@ class AndroidUiautomation(AndroidUiautomationPoco):
                 allure.attach(fp.read(), '截图', allure.attachment_type.PNG)
 
     @allure.step
-    def click(self, pos: Union(float, float)):
+    def click(self, pos: Union[float, float]):
         ret = super(AndroidUiautomation, self).click(pos)
         screen_attach()
         return ret
 
     @allure.step
-    def swipe(self, p1: Union(float, float), p2: Union(float, float)=None, direction: Union(float, float)=None, duration: float=2.0):
+    def swipe(self, p1: Union[float, float], p2: Union[float, float]=None, direction: Union[float, float]=None, duration: float=2.0):
         ret = super(AndroidUiautomation, self).swipe(p1=p1, p2=p2, direction=direction, duration=duration)
         screen_attach()
         return ret
 
     @allure.step
-    def long_click(self, pos: Union(float, float), duration: float=2.0):
+    def long_click(self, pos: Union[float, float], duration: float=2.0):
         ret = super(AndroidUiautomation, self).long_click(pos=pos, duration=duration)
         screen_attach()
         return ret
