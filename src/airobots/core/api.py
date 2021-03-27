@@ -3,11 +3,8 @@
 This module contains the Airtest Core APIs.
 """
 import os
-import time
 
-from six.moves.urllib.parse import parse_qsl, urlparse
-
-from airtest.core.cv import Template, loop_find, try_log_screen
+from airtest.core.cv import Template, loop_find
 from airtest.core.error import TargetNotFoundError
 from airtest.core.settings import Settings as ST
 from airtest.utils.compat import script_log_dir
@@ -42,7 +39,7 @@ import allure
 
 
 def screen_attach():
-    screen = try_log_screen()
+    screen = air_snapshot()
     filepath = os.path.join(ST.LOG_DIR, screen.get('screen'))
     with open(filepath, 'rb') as fp:
         allure.attach(fp.read(), '截图', allure.attachment_type.PNG)
