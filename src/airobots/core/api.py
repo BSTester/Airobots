@@ -40,6 +40,7 @@ import allure
 
 def screen_attach():
     screen = air_snapshot()
+    if not screen: return
     filepath = os.path.join(ST.LOG_DIR, screen.get('screen'))
     with open(filepath, 'rb') as fp:
         allure.attach(fp.read(), '截图', allure.attachment_type.PNG)
