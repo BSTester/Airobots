@@ -1,8 +1,8 @@
 # Airobots
 
-整合了Airtest Project和RobotFramework框架的方法。
+全端自动化测试框架Airobots，整合了Airtest、RobotFramework、Selenium、Appium、HTTPRunner、Locust框架的方法，从而实现一套框架，能够进行全端的测试，统一执行入口和报告的输出。
 
-另外整合了HTTPRunner，实现一个框架同时支持Android、IOS、WEB、API的自动化测试及性能测试(HTTPRunner提供的基于Locust的压力生成器，不带资源监控)。
+本质上，Airobots可看成是以上优秀开源测试框架的集成库，整合后以实现方法的共用，比如在Selenium和Appium中使用Airtest的图像识别功能。实现一个框架同时支持Android、IOS、WEB、API的自动化测试及性能测试(HTTPRunner提供的基于Locust的压力生成器)，并且统一了测试报告输出格式，使用美观大气的Allure作为测试报告，可详细记录测试过程日志、测试步骤和截图。
 
 安装框架依赖包, 执行
 
