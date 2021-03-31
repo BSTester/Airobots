@@ -125,8 +125,8 @@ def keyevent(keyname, **kwargs):
 
 
 @allure.step
-def text(text, enter=True, **kwargs):
-    air_text(text, enter=enter, **kwargs)
+def text(text, enter=True, locator=None, **kwargs):
+    air_text(text, enter=enter, locator=locator, **kwargs)
     screen_attach()
 
 
