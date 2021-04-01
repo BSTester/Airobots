@@ -6,7 +6,7 @@ import os
 
 from airtest.core.cv import Template, loop_find
 from airtest.core.error import TargetNotFoundError
-from airtest.core.settings import Settings as ST
+from .settings import ST
 from airtest.utils.compat import script_log_dir
 from airtest.core.helper import (G, delay_after_operation, import_device_cls,
                                  logwrap, set_logdir, using, log)
