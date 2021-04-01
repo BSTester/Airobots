@@ -51,6 +51,7 @@ def main():
     elif args.type in ['web', 'ios', 'android']:
         ST.BROWSER = args.browser or ST.BROWSER
         ST.REMOTE_URL = args.remote_url or ST.REMOTE_URL
+        ST.PLATFORM_NAME = args.type or ST.PLATFORM_NAME
         if not os.path.exists(ST.LOG_DIR): os.makedirs(ST.LOG_DIR)
         sys.exit(pytest.main(extra_args))
     else:
